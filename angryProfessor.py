@@ -7,4 +7,3 @@ def angryprofessor(students, k):
     if count >= k:
         return "YES"
     return "NO"
-
