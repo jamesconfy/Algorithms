@@ -7,3 +7,7 @@ def angryprofessor(students, k):
     if count >= k:
         return "YES"
     return "NO"
+
+students = [1, -3, 4, 5,-6 ,4,-5,-6,4]
+k = 4
+print(angryprofessor(students, k))
