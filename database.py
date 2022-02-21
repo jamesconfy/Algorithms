@@ -1,6 +1,12 @@
 import pymongo
+import os
+from dotenv import load_dotenv
 
-myclient = pymongo.MongoClient("mongodb+srv://Everybody:arsenalB2@cluster0.wijun.mongodb.net/?retryWrites=true&w=majority")
+load_dotenv()
+
+db = os.environ.get("db")
+
+myclient = pymongo.MongoClient(f"mongodb+srv://{db}")
 mydb = myclient["Content"]
 mycol = mydb["Import"]
 
