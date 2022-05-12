@@ -1,13 +1,7 @@
 ### **Longest Substring Without Repeating Characters**
-**Medium**
 
-22815
+##### Difficulty: **Medium**
 
-1018
-
-Add to List
-
-Share
 Given a string s, find the length of the longest substring without repeating characters.
 
 ```python
@@ -41,9 +35,7 @@ def lengthOfLongestSubstring(self, s: str) -> int:
         return mx
 ```
 
- 
-
-```
+```html
 Example 1:
 
 Input: s = "abcabcbb"
@@ -61,7 +53,6 @@ Output: 3
 Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 ```
- 
 
 Constraints:
 
