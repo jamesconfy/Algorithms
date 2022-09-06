@@ -1,8 +1,12 @@
+// import java.util.Arrays;
+
 class binarySearch {
     public static void main (String[] args) {
-        int a[] = {1, 2, 3, 4, 5, 7, 8, 9, 10, 15, 16, 19, 22};
+        int a[] = { 1, 2, 3, 4, 5, 7, 8, 9, 10, 15, 16, 19, 22 };
+        double[] array = new double[15];
         int val = 8;
-        System.out.print(myBinarySearch(a, val));
+        System.out.println(myBinarySearch(a, val));
+        System.out.println(array.length);
     }
     static int myBinarySearch(int arr[], int val){
         int start = 0;
