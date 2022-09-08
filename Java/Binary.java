@@ -1,33 +1,63 @@
-import java.util.Arrays;
-import edu.princeton.cs.algs4.*;
+import java.io.File;
+import java.util.ArrayList;
+import java.io.FileNotFoundException;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
 public class Binary {
-    public static void main(String[] args) {
-        int[] whitelist = StdIn.readAllInts();
-        Arrays.sort(whitelist);
-        while (!StdIn.isEmpty()) {
-            int key = StdIn.readInt();
-            if (rank(key, whitelist) == -1)
-            {
-                StdOut.println(key);
-            }
-        }    
-    }
+    public static void main(String[] args) throws FileNotFoundException {
+        System.out.print("Enter the file name with extension: ");
 
-    public static int rank(int key, int[] a) {
-        int lo = 0;
-        int hi = a.length - 1;
-        while (lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (key < a[mid]) {
-                hi = mid - 1;
-            } else if (key > a[mid]) {
-                lo = mid + 1;
-            }
-            else {
-                return mid;
+        Scanner scanner = new Scanner(System.in);
+        File file = new File(scanner.nextLine());
+        Scanner sc = new Scanner(file);
+        List<Integer> integers = new ArrayList<>();
+        while (sc.hasNext()) {
+            if (sc.hasNextInt()) {
+                integers.add(sc.nextInt());
+            } else {
+                sc.next();
             }
         }
-        return -1;
+
+        scanner.close();
+        sc.close();
+        Collections.sort(integers);
+        System.out.println(rank(5, integers));
+        System.out.println(integers);
+    }
+
+    // public static int rank(int key, int[] a) {
+    //     int lo = 0;
+    //     int hi = a.length - 1;
+    //     while (lo <= hi) {
+    //         int mid = lo + (hi - lo) / 2;
+    //         if (key < a[mid]) {
+    //             hi = mid - 1;
+    //         } else if (key > a[mid]) {
+    //             lo = mid + 1;
+    //         } else {
+    //             return mid;
+    //         }
+    //     }
+    //     return -1;
+    // }
+
+    public static int rank(int key, List<Integer> integers) {
+        return rank(key, integers, 0, integers.size() - 1);
+    }
+
+    public static int rank(int key, List<Integer> integers, int lo, int hi) {
+        // Index of key in a[], if present, is not smaller than lo and not larger than hi.
+        if (lo > hi)
+            return -1;
+        int mid = lo + (hi - lo) / 2;
+        if (key < integers.get(mid))
+            return rank(key, integers, lo, mid - 1);
+        else if (key > integers.get(mid))
+            return rank(key, integers, mid + 1, hi);
+        else
+            return mid;
     }
 }

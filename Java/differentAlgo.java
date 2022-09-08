@@ -14,7 +14,9 @@ public class differentAlgo {
         System.out.println(sqrt(a[5]));
         System.out.println(isPrime(a[1]));
         System.out.println(H(a[6]));
-        System.out.println(hypotenuse());
+        System.out.println(hypotenuse(5, 5));
+        // int w = (int) (Math.random() * 10) + 1;
+        // System.out.println(w);
     }
 
     public static double average(int[] a) {
@@ -94,8 +96,15 @@ public class differentAlgo {
     }
 
     public static double hypotenuse() {
-        return hypotenuse(4.0, 3.0);
-        
+        return hypotenuse(0.0, 0.0);
+    }
+
+    // public static double hypotenuse(double a) {
+    //     return hypotenuse(a, 0.0);
+    // }
+
+    public static double hypotenuse(double b) {
+        return hypotenuse(0.0, b);
     }
 
     public static double H(int N) {
