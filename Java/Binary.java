@@ -4,13 +4,16 @@ import java.io.FileNotFoundException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+// import edu.princeton.cs.algs4.*;
 
 public class Binary {
     public static void main(String[] args) throws FileNotFoundException {
-        System.out.print("Enter the file name with extension: ");
+        // System.out.print("Enter the file name with extension: ");
+        //     double fun = StdRandom.cauchy();
+        File file = new File(args[0] + ".txt");
 
-        Scanner scanner = new Scanner(System.in);
-        File file = new File(scanner.nextLine());
+        // Scanner scanner = new Scanner(System.in);
+        // File file = new File(scanner.nextLine());
         Scanner sc = new Scanner(file);
         List<Integer> integers = new ArrayList<>();
         while (sc.hasNext()) {
@@ -21,11 +24,13 @@ public class Binary {
             }
         }
 
-        scanner.close();
+//        scanner.close();
         sc.close();
         Collections.sort(integers);
-        System.out.println(rank(5, integers));
+        System.out.println(rank(10, integers));
         System.out.println(integers);
+       //  System.out.println(StdRandom.class.cast(integers));
+     //   System.out.println(fun);
     }
 
     // public static int rank(int key, int[] a) {

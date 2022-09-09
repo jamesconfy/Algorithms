@@ -1,11 +1,13 @@
 // import java.io.*;
 import java.util.Arrays;
+// import java.util.Scanner;
 
 public class differentAlgo {
     public static void main(String[] args) {
-        int[] a = { 4, 5, 12, 15, 10, 11, 13 };
+        int[] a = { 4, 5, 12, 15, 10, 11, 13, 20 };
         int[][] r = { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 } };
         int[][] p = r;
+        System.out.println(args[1]);
         System.out.println(Arrays.toString(reverse(a)));
         System.out.println(average(a));
         System.out.println(max(a));
@@ -15,6 +17,11 @@ public class differentAlgo {
         System.out.println(isPrime(a[1]));
         System.out.println(H(a[6]));
         System.out.println(hypotenuse(5, 5));
+        System.out.println(uniform(12.0, 13.0));
+        System.out.println(uniform(10));
+        System.out.println(uniform(10, 20));
+        shuffle(a);
+        System.out.println(Arrays.toString(a));
         // int w = (int) (Math.random() * 10) + 1;
         // System.out.println(w);
     }
@@ -71,7 +78,6 @@ public class differentAlgo {
         return value;
     }
 
-
     public static boolean isPrime(int N) {
         if (N < 2)
             return false;
@@ -112,5 +118,43 @@ public class differentAlgo {
         for (int i = 1; i <= N; i++)
             sum += 1.0 / i;
         return sum;
+    }
+
+    public static double uniform(double a, double b) {
+        double answer = a + Math.random() * (b - a);
+        return answer;
+    }
+
+    public static int uniform(int N) {
+        int answer = (int) (Math.random() * N);
+        return answer;
+    }
+
+    public static int uniform(int a, int b) {
+        int answer = a + uniform(b - a);
+        return answer;
+    }
+
+    public static int discrete(double[] a) {
+        // Entries in a[] must sum to 1.
+        double r = Math.random();
+        double sum = 0.0;
+        for (int i = 0; i < a.length; i++) {
+            sum = sum + a[i];
+            if (sum >= r)
+                return i;
+        }
+        return -1;
+    }
+    
+    public static void shuffle(int[] a) {
+        int N = a.length;
+        for (int i = 0; i < N; i++) {
+            // Exchange a[i] with random element in a[i..N-1]
+            int r = i + uniform(N - i);
+            int temp = a[i];
+            a[i] = a[r];
+            a[r] = temp;
+        }
     }
 }
