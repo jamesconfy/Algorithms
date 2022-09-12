@@ -2,6 +2,7 @@
   "java.project.referencedLibraries": [
     "lib/**/*.jar",
     "Java/DSA_Java/algs4.jar",
+    "Java/**/*.jar",
     "Java/algs4.jar"
   ]
 }
