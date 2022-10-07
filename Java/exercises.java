@@ -1,8 +1,11 @@
 import java.util.Arrays;
 import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.Counter;
 
 public class exercises {
     public static void main(String[] args) {
+        Counter counter = new Counter("abc");
+        StdOut.println(counter.tally());
         // int a = Integer.parseInt(args[0]);
         // int b = Integer.parseInt(args[1]);
         // int c = Integer.parseInt(args[2]);
@@ -41,7 +44,7 @@ public class exercises {
     }
 
     public static boolean fragment(double x, double y) {
-        if (0 < x && x < 1 && 0 < y && y < 1) {
+        if ((0 < x && x < 1) && (0 < y && y < 1)) {
             return true;
         }
 
