@@ -23,6 +23,9 @@ class Stack(object):
     def print(self):
         return self.stack
 
+    def size(self):
+        return len(self.stack)
+
 stack = Stack()
 stack.add("A")
 stack.add("B")

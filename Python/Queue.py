@@ -23,6 +23,9 @@ class Queue(object):
     def print(self):
         return self.queue
 
+    def size(self):
+        return len(self.queue)
+
 queue = Queue()
 queue.add("A")
 queue.add("B")
