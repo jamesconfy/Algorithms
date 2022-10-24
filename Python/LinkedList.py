@@ -24,7 +24,7 @@ class LinkedList:
 
             temp = temp.next
 
-        print("Node value have to be in Linked List")
+        print(f"Node value {prev_node} is not in the Linked List")
         return
 
     def addEnd(self, new_data):
@@ -87,5 +87,6 @@ llist.addEnd(10)
 llist.removeNode(7)
 llist.insertAfter(3, 4)
 llist.insertAfter(4, 5)
+llist.insertAfter(14, 4)
 
 print('Created list is:', llist.printList())
