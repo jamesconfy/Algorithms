@@ -1,5 +1,3 @@
-from lib2to3.pgen2.token import LPAR
-
 def Heapify(arr, n, i):
     largest = i
     l = 2*i + 1
@@ -29,6 +27,6 @@ def heapSort(arr):
         arr[i], arr[0] = arr[0], arr[i]  # swap
         Heapify(arr, i, 0)
 
-arr = [3, 12, 4, 11, 0, 1, -100, 13, 5, 6, 7, 2, -1]
+arr = [3, 12, 11, 4, 11, 0, 1, -100, 13, 5, 6, 7, 2, -1]
 heapSort(arr)
 print("Sorted array is", arr)

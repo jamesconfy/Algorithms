@@ -55,7 +55,7 @@ class LinkedList:
             prev = headVal
             headVal = headVal.next
 
-        if (headVal == None):
+        if headVal == None:
             return
 
         prev.next = headVal.next
@@ -88,5 +88,6 @@ llist.removeNode(7)
 llist.insertAfter(3, 4)
 llist.insertAfter(4, 5)
 llist.insertAfter(14, 4)
+llist.removeNode(20)
 
 print('Created list is:', llist.printList())
