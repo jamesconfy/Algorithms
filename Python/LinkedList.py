@@ -14,13 +14,18 @@ class LinkedList:
         self.head = new_node
 
     def insertAfter(self, prev_node, new_data):
-        if prev_node is None:
-            print("Node must be in LinkedList")
-            return
-
         new_node = Node(new_data)
-        new_node.next = prev_node.next
-        prev_node.next = new_node
+        temp = self.head
+        while temp:
+            if temp.data == prev_node:
+                new_node.next = temp.next
+                temp.next = new_node
+                return
+
+            temp = temp.next
+
+        print("Node value have to be in Linked List")
+        return
 
     def addEnd(self, new_data):
         new_node = Node(new_data)
@@ -58,12 +63,16 @@ class LinkedList:
 
     def printList(self):
         temp = self.head
+        res = ""
 
         while temp is not None:
-            print(temp.data, end=" => ")
+            if temp.next is None:
+                res += f"{temp.data}"
+            else:
+                res += f"{temp.data} => "
             temp = temp.next
 
-        print()
+        return res
 
 
 # Start with the empty list
@@ -79,4 +88,4 @@ llist.removeNode(7)
 llist.insertAfter(3, 4)
 llist.insertAfter(4, 5)
 
-print('Created list is: ', llist.printList())
+print('Created list is:', llist.printList())
