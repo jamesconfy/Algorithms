@@ -16,6 +16,9 @@ class DoublyLinkedList(object):
         self.head = new_node
 
     def insertAfter(self, prev, data):
+        if prev is None:
+            return
+
         new_node = Node(data)
         temp = self.head
         while temp is not None:
@@ -88,6 +91,7 @@ list.push(3)
 list.addEnd(7)
 list.addEnd(8)
 list.insertAfter(3, 4)
+list.insertAfter(None, 4)
 list.removeNode(15)
 list.push(2)
 list.push(1)
