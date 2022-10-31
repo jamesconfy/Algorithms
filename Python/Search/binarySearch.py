@@ -13,7 +13,6 @@ def binarySearch(arr, val=0):
 
 
 if __name__ == "__main__":
-
     a = [1, 3, 4, 5, 6, 7, 11, 12, 23, 34, 51, 53, 55, 61, 70, 72]
     a.sort()
     val = 7
