@@ -51,5 +51,5 @@ def mergeSort(arr, l, r):
 
 arr = [1, 2, 5, 3, 4, 7, 2]
 l = 0
-r = 6
+r = len(arr) - 1
 print(mergeSort(arr, l, r))

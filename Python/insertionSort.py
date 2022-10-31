@@ -7,16 +7,11 @@ def insertionSort(arr):
         # greater than key, to one position ahead
         # of their current position
         j = i-1
-        while j >= 0 and key > arr[j] :
-                arr[j + 1] = arr[j]
-                j -= 1
+        while j >= 0 and key < arr[j] :
+            arr[j + 1] = arr[j]
+            j -= 1
         arr[j + 1] = key
 
-    return arr
-
-
-
-
-
 arr = [3,5,6,7,8,1]
-print(insertionSort(arr))
+insertionSort(arr)
+print(arr)
