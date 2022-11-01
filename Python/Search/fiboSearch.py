@@ -4,7 +4,7 @@ def fiboSearch(arr, target):
     # Initialize fibonacci numbers
     fibMMm2 = 0  # (m-2)'th Fibonacci No.
     fibMMm1 = 1  # (m-1)'th Fibonacci No.
-    fibM = fibMMm2 + fibMMm1  # m'th Fibonacci
+    fibM = 1  # m'th Fibonacci
  
     # fibM is going to store the smallest
     # Fibonacci Number greater than or equal to n
@@ -14,7 +14,7 @@ def fiboSearch(arr, target):
         fibM = fibMMm2 + fibMMm1
  
     # Marks the eliminated range from front
-    offset = -1
+    offset = 0
  
     # while there are elements to be inspected.
     # Note that we compare arr[fibMm2] with x.
@@ -55,8 +55,8 @@ def fiboSearch(arr, target):
  
 # Driver Code
 if __name__ == "__main__":
-    arr = [10, 22, 35, 40, 45, 50, 80, 82, 85, 90, 100,235]
-    target = 22
+    arr = [10, 22, 35, 40, 45, 50, 80, 82, 85, 90, 100, 235]
+    target = 100
     ind = fiboSearch(arr, target)
 
     if ind >= 0:
