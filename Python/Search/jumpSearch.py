@@ -9,15 +9,15 @@ def jumpSearch(arr, target):
     # Finding the block where element is
     # present (if it is present)
     prev = 0
-    while arr[int(min(step, n)-1)] < x:
+    while arr[int(min(step, n)-1)] < target:
         prev = step
-        step += math.sqrt(n)
+        step *= 2
         if prev >= n:
             return -1
      
     # Doing a linear search for x in
     # block beginning with prev.
-    while arr[int(prev)] < x:
+    while arr[int(prev)] < target:
         prev += 1
          
         # If we reached next block or end
@@ -26,17 +26,17 @@ def jumpSearch(arr, target):
             return -1
      
     # If element is found
-    if arr[int(prev)] == x:
+    if arr[int(prev)] == target:
         return prev
      
     return -1
  
 # Driver code to test function
-arr = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610 ]
-x = 55
+arr = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 1000 ]
+x = 1000
  
 # Find the index of 'x' using Jump Search
-index = jumpSearch(arr, x)
+index = jumpSearch(arr, target=x)
  
 # Print the index where 'x' is located
 print("Number" , x, "is at index" ,"%.0f"%index)

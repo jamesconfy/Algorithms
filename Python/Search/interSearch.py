@@ -1,12 +1,12 @@
 def interSearch(arr, target):
-    first = 0
+    start = 0
     end = len(arr) - 1
-    while first <= end and target >= arr[first] and target <= arr[end]:
-        mid = first + int(((float(end - first)/(arr[end] - arr[first])) * (target - arr[first])))
+    while start <= end and target >= arr[start] and target <= arr[end]:
+        mid = start + int(((float(end - start)/(arr[end] - arr[start])) * (target - arr[start])))
         if arr[mid] == target:
             return mid + 1
         elif arr[mid] < target:
-            first = mid + 1
+            start = mid + 1
         else:
             end = mid - 1
 
